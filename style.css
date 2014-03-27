@@ -91,13 +91,17 @@ a {
 	margin-right: -1em;
 }
 
-.gallery figure {
+.gallery img {
+	width: 100%;
+}
+
+.gallery .gallery-item {
 	margin: 0;
 	float: left;
 	padding: 1em;
 }
 
-.gallery-columns-3 figure {
+.gallery-columns-3 .gallery-item {
 	width: 33.333%;
 }
 
