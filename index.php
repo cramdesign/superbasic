@@ -31,7 +31,7 @@
 					<?php if( has_category() ) : ?>
 					<p class="category"><?php the_category(', ') ?></p>
 					<?php endif; ?>
-				</div>/* meta */
+				</div><!-- meta -->
 				
 			<?php endif; ?>
 			</header>
@@ -47,7 +47,7 @@
 		
 		<div id="comments-wrap">		
 			<?php if ( comments_open() || '0' != get_comments_number() ) comments_template(); ?>
-		</div>
+		</div><!-- comments-wrap -->
 		
 	</div><!-- primary -->
 	

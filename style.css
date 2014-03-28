@@ -3,6 +3,11 @@
 Theme Name: superbasic
 Version: 0.1
 
+Author: Matt Cram
+Author URI: http://mattcram.com/
+
+GitHub Theme URI: https://github.com/cramdesign/superbasic
+
 */
 
 
@@ -63,6 +68,7 @@ body {
 	font-family: "Open Sans", Helvetica, sans-serif;
 	line-height: 1.625;
 	color: #444;
+	background: #eee;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -81,28 +87,11 @@ a {
 
 
 
+/* footer 
+------------------------------------------ */
+
 #footer {
-	background: #eee;
 	padding: 2em 0;
-}
-
-.gallery {
-	margin-left: -1em;
-	margin-right: -1em;
-}
-
-.gallery img {
-	width: 100%;
-}
-
-.gallery .gallery-item {
-	margin: 0;
-	float: left;
-	padding: 1em;
-}
-
-.gallery-columns-3 .gallery-item {
-	width: 33.333%;
 }
 
 
@@ -186,6 +175,7 @@ a {
 
 #content {
 	padding: 4em 0;
+	background: #fff;
 }
 
 @media (min-width: 500px) {
@@ -256,41 +246,155 @@ a {
 
 
 
-/* dropmenu 
+
+
+/* WordPress Gallery 
 ------------------------------------------ */
 
-.dropmenu, .menu {
-	list-style: none;
+.gallery {
+	margin-left: -0.5em;
+	margin-right: -0.5em;
+}
+
+.gallery-item {
+	margin: 0;
+	float: left;
+	padding: 0.5em;
+}
+
+.gallery-item img {
+	width: 100%;
+}
+
+.gallery-columns-1 .gallery-item {
+    width: 100%;
+    float: none;
+}
+.gallery-columns-2 .gallery-item {
+    width: 50%
+}
+.gallery-columns-3 .gallery-item {
+    width: 33.3333%
+}
+.gallery-columns-4 .gallery-item {
+    width: 25%
+}
+.gallery-columns-5 .gallery-item {
+    width: 20%
+}
+.gallery-columns-6 .gallery-item {
+    width: 16.6667%
+}
+.gallery-columns-7 .gallery-item {
+    width: 14.2857%
+}
+.gallery-columns-8 .gallery-item {
+    width: 12.5%
+}
+.gallery-columns-9 .gallery-item {
+    width: 11.1111%
+}
+
+
+
+/* basic menu code 1.0
+-------------------------------------------------------------- */
+.dropmenu, .dropmenu ul, .menu, .menu ul {
 	margin: 0;
 	padding: 0;
+	list-style: none;
 }
 
-@media (max-width: 800px) {
-
-	.dropmenu {
-	}
-
+.dropmenu li, .menu li {
+	margin: 0;
+	display: inline-block;
+	background: transparent;
+	position: relative;
+	text-align: left;
 }
 
-@media (min-width: 500px) {
-	
-	.dropmenu > li, .menu > li {
-		display: inline-block;
-	}
-
-}
-
-.dropmenu a, .menu a {
-	font-weight: bold;
-	text-transform: uppercase;
+.dropmenu li a {
+	text-decoration: none;
+	display: block;
 	padding: 0.5em 1em;
+	white-space: nowrap;
+}
+
+.dropmenu li ul {
+	background: #aaa;
+	display: none;
+	position: absolute;
+	left: 0; top: 100%;
+	box-shadow: 0 0 3px rgba(0,0,0,0.1);
+	z-index: 999;
+}
+
+.dropmenu li ul li {
 	display: block;
 }
 
-.dropmenu a:hover {
-	background-color: rgba(0,0,0,0.3);
+.dropmenu li ul li ul {
+	left: 100%; top: 0;
 }
 
+.dropmenu li:hover {
+	background: #ddd;
+	background: rgba(0,0,0,0.125);
+}
+
+.dropmenu li:hover > ul {
+	display: block;
+}
+
+@media (min-width:500px) {
+
+	.dropmenu li.menu-item-has-children > a:after {
+		content: ' +';
+	}
+
+}/* end @media */
+
+@media (max-width:500px) {
+
+	.dropmenu {
+		background: #fff;
+	}
+	
+	.dropmenu li {
+		background: rgba(0,0,0,0.1);
+		overflow: hidden;
+		font-weight: bold;
+	}
+	
+	.dropmenu li + li {
+		margin-top: 1px;
+	}
+	
+	.dropmenu li ul {
+		background: none;
+		margin-bottom: 1em;
+		box-shadow: none;
+		position: static;
+	}
+	
+	.dropmenu li ul li {
+		background: none;
+		font-weight: normal;
+	}
+	
+	.dropmenu li ul li a {
+		padding: 0.25em 1em;
+	}
+	
+	.dropmenu li ul li a:before {
+		content: '\2022\00a0';
+	}
+
+	.dropmenu li, .dropmenu li ul {
+		display: block;
+	}
+	
+}/* end @media */
 
 
 /* Menu toggles 

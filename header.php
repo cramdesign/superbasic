@@ -22,7 +22,7 @@
 			
 		<nav id="menu">
 			<input type="checkbox" id="toggle"><label for="toggle">Menu</label>
-			<div class="target"><?php wp_nav_menu( array( 'menu' => 'primary' )); ?></div>
+			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'container' => false, 'menu_class' => 'dropmenu target' )); ?>
 		</nav>
 		
 	</div><!-- row -->
