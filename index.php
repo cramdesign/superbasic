@@ -1,5 +1,7 @@
 <?php get_header(); ?>
 
+<div class="row">
+
 	<div class="primary">
 		
 		<?php /* Start the Loop */ ?>
@@ -44,11 +46,7 @@
 		<?php endwhile; endif; ?>
 
 		<nav><?php posts_nav_link(); ?></nav>
-		
-		<div id="comments-wrap">		
-			<?php if ( comments_open() || '0' != get_comments_number() ) comments_template(); ?>
-		</div><!-- comments-wrap -->
-		
+
 	</div><!-- primary -->
 	
 	<div class="secondary">
@@ -56,5 +54,19 @@
 		<?php get_sidebar(); ?>
 		
 	</div><!-- secondary -->
+
+</div><!-- row -->
 		
+
+
+<?php if ( is_single() && comments_open() ) : ?> 
+<div id="comments-wrap">		
+<div class="row">
+	<?php comments_template(); ?>
+</div><!-- row -->
+</div><!-- comments-wrap -->
+<?php endif; ?>
+
+
+
 <?php get_footer(); ?>

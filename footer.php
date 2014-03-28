@@ -1,9 +1,8 @@
-</div><!-- row -->
 </main>
 
 <footer id="footer">
 	<div class="row">	
-		<p>Powered by WordPress and my imagination.</p>
+		<p>Powered by WordPress and imagination.</p>
 	</div>	
 </footer>
 	
