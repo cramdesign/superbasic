@@ -5,7 +5,7 @@
 		<?php /* Start the Loop */ ?>
 		<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
-		<article class="post">
+		<article <?php post_class( 'post' ); ?>>
 		
 			<header>
 			<?php /* if its a single page, it doesn't need a link. */

@@ -4,13 +4,12 @@
 <title><?php wp_title('|', true, 'right'); ?><?php bloginfo('name'); ?></title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/normalize.css">
-<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/style.css">
+<?php /* Note: All stylesheets are loaded with wp_enqueue_style in functions.php */ ?>
 
 <?php wp_head(); ?>
 
 </head>
-<body>
+<body <?php body_class(); ?>>
 	
 <header id="header" class="clear">
 	<div class="row">
