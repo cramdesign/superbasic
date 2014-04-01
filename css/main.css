@@ -14,6 +14,13 @@
 }
 ------------------------------------------ */
 
+:first-child {
+	margin-top: 0;
+}
+
+:last-child {
+	margin-bottom: 0;
+}
 
 /* universal reset: set everything to zero for consistency */
 *, *:before, *:after {
@@ -201,15 +208,24 @@ body {
 
 
 
-/* Comments 
+
+/* widgets 
 ------------------------------------------ */
 
-#comments-wrap {
-	background: #fafafa;
-	border-top: 1px solid #eee;
+.widget + .widget {
+	margin-top: 2em;
+	border-top: 1px solid #ddd;
+	padding-top: 2em;
 }
 
+.widget_calendar th, .widget_calendar td {
+	padding: 0.5em 0;
+	text-align: center;
+}
 
+.screen-reader-text {
+	display: none;
+}
 
 
 /* footer 
@@ -419,5 +435,40 @@ body {
 	}
 	
 }
+
+
+
+
+
+/* Comments 
+------------------------------------------ */
+
+#comments-wrap {
+}
+
+.commentlist, .commentlist .children {
+	list-style: none;
+	padding: 0;
+}
+
+.commentlist .depth-1 {
+	border: 1px solid #ddd;
+	background: #fafafa;
+	margin-bottom: 2em;
+}
+
+.children li {
+	border-top: 1px solid #ddd;
+	background: #f3f3f3;
+}
+
+.comment-body {
+	padding: 2em;
+}
+
+.comment #respond {
+	padding: 2em;
+}
+
 
 

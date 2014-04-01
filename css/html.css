@@ -1,12 +1,11 @@
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,800);
-
-
 body {
 	font-size: 16px;
-	font-family: "Open Sans", Helvetica, sans-serif;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	line-height: 1.625;
-	color: #444;
+	color: #777;
 	background: #fff;
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
 }
 
 img {
@@ -16,7 +15,8 @@ img {
 
 h1, h2, h3, h4, h5, h6 {
 	margin-bottom: 1em;
-	font-weight: 800;
+	font-weight: bold;
+	color: #444;
 }
 
 p {
@@ -101,11 +101,12 @@ caption {
 /* Basic Form Styles 
 -------------------------------------------------------------- */
 input, textarea, button {
-	background: #eee;
+	background: #fafafa;
 	margin: 0;
 	padding: 0.5em;
 	outline: none;
-	border: 1px solid #ccc;
+	border: 1px solid #ddd;
+	max-width: 100%;
 }
 
 textarea {
@@ -114,7 +115,7 @@ textarea {
 }
 
 input:focus, textarea:focus {
-	background: #fafafa;
+	background: #fff;
 }
 
 input[type="submit"] { 
