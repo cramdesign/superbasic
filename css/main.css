@@ -38,6 +38,10 @@
 	position: relative;
 }
 
+.row .row {
+	width: auto;
+}
+
 /* contain and clear floated elements */
 .row:before, .row:after, .clear:before, .clear:after {
 	display: table;
@@ -47,27 +51,51 @@
 
 
 
-/* HTML 
+/* Color boxes 
 ------------------------------------------ */
 
 body {
-	background: #eee;
+	background: #fff;
+	color: #666;
 }
+
+a {
+	color: #d74b4b;
+}
+
+#header {
+	background: #6cf;
+	background: #475f77;
+	color: #dcddd8;
+}
+
+#header a {
+	color: #fff;
+}
+
+#content {
+	background: #fff;
+}
+
+#comments-wrap {
+	background: #f0eee8;
+}
+
+#footer {
+	background: #dcddd8;
+}
+
+
 
 /* Header 
 ------------------------------------------ */
 
 #header {
-	background: #6cf;
 	line-height: 1.2;
-	padding: 2em 0;
 }
 
 #header .row {
-}
-
-#header a {
-	color: #fff;
+	padding: 3em 0;
 }
 
 .site-title, .site-description {
@@ -126,12 +154,16 @@ body {
 
 }
 
+#menu {
+	font-size: 12px;
+	text-transform: uppercase;
+}
+
 
 /* Content 
 ------------------------------------------ */
 
 #content {
-	background: #fff;
 }
 
 #content .row {
@@ -167,13 +199,16 @@ body {
 	
 	.secondary {
 		margin-top: 2em;
+	}
+	
+	#content .secondary {
 		border-top: 1px solid #ddd;
 		padding-top: 2em;
 	}
 	
 }
 
-.meta p {
+.post .meta p {
 	opacity: 0.60;
 	text-transform: uppercase;
 	font-size: 80%;
@@ -182,11 +217,11 @@ body {
 
 @media (min-width: 500px) {
 
-	.meta p {
+	.post .meta p {
 		display: inline-block;
 	}
 
-	.meta p + p {
+	.post .meta p + p {
 		margin-left: 0.5em;
 		border-left: 1px solid #888;
 		padding-left: 0.5em;
@@ -301,17 +336,18 @@ body {
 	background: transparent;
 	position: relative;
 	text-align: left;
+	font-weight: bold;
 }
 
 .dropmenu li a {
 	text-decoration: none;
 	display: block;
-	padding: 0.5em 1em;
+	padding: 0.75em 1.25em;
 	white-space: nowrap;
 }
 
 .dropmenu li ul {
-	background: #aaa;
+	background: #354b5e;
 	display: none;
 	position: absolute;
 	left: 0; top: 100%;
@@ -321,6 +357,7 @@ body {
 
 .dropmenu li ul li {
 	display: block;
+	font-weight: normal;
 }
 
 .dropmenu li ul li ul {
@@ -329,7 +366,7 @@ body {
 
 .dropmenu li:hover {
 	background: #ddd;
-	background: rgba(0,0,0,0.125);
+	background: rgba(0,0,0,0.2);
 }
 
 .dropmenu li:hover > ul {
@@ -353,7 +390,6 @@ body {
 	.dropmenu li {
 		background: rgba(0,0,0,0.1);
 		overflow: hidden;
-		font-weight: bold;
 	}
 	
 	.dropmenu li ul {
@@ -365,7 +401,6 @@ body {
 	
 	.dropmenu li ul li {
 		background: none;
-		font-weight: normal;
 	}
 	
 	.dropmenu li ul li a {
@@ -444,6 +479,11 @@ body {
 ------------------------------------------ */
 
 #comments-wrap {
+	padding: 4em 0;
+}
+
+.commentlist {
+	border-top: 1em solid rgba(0,0,0,0.2);
 }
 
 .commentlist, .commentlist .children {
@@ -452,23 +492,46 @@ body {
 }
 
 .commentlist .depth-1 {
-	border: 1px solid #ddd;
-	background: #fafafa;
-	margin-bottom: 2em;
+	border-bottom: 1em solid rgba(0,0,0,0.2);
 }
 
 .children li {
-	border-top: 1px solid #ddd;
-	background: #f3f3f3;
+	border-top: 1px solid rgba(0,0,0,0.1);
 }
 
-.comment-body {
-	padding: 2em;
+.children li section {
+}
+
+.comment article {
+	padding: 4em 0;
 }
 
 .comment #respond {
-	padding: 2em;
+	padding: 0 0 2em 0;
 }
 
+.comment .secondary {
+	opacity: 1;
+}
+
+.comment .vcard figure {
+	width: 60px;
+	margin-right: 1em;
+	float: left;
+}
+
+.comment .vcard .meta {
+	overflow: hidden;
+}
+
+.comment .vcard p {
+	margin: 0.5em 0;
+	line-height: 1;
+}
+
+
+.form-allowed-tags {
+	display: none;
+}
 
 

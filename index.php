@@ -1,5 +1,6 @@
 <?php get_header(); ?>
 
+<div id="content">		
 <div class="row">
 
 	<div class="primary">
@@ -56,6 +57,7 @@
 	</div><!-- secondary -->
 
 </div><!-- row -->
+</div><!-- content -->
 		
 
 

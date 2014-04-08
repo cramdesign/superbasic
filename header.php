@@ -29,4 +29,4 @@
 
 
 
-<main id="content">
+<main>

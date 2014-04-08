@@ -5,7 +5,6 @@ add_filter( 'use_default_gallery_style', '__return_false' );
 
 
 
-
 /* Register widget areas
 -------------------------------------------------------------- */
 register_sidebar(array(
@@ -29,7 +28,7 @@ if (!function_exists('theme_scripts')) : function theme_scripts() {
 	// Scripts
 	if ( is_singular() && comments_open() && get_option('thread_comments') ) wp_enqueue_script( 'comment-reply' );
 
-	
+
 	// Styles
 	wp_enqueue_style( 'norm-style', get_template_directory_uri() . '/css/normalize.css' );
 	wp_enqueue_style( 'html-style', get_template_directory_uri() . '/css/html.css' );
@@ -53,6 +52,15 @@ function custom_theme_features()  {
 
 	// Editor stylesheet
 	add_editor_style ( 'css/html.css' );
+
+
+	// Enable support for HTML5 markup.
+	add_theme_support( 'html5', array(
+		'comment-list',
+		'search-form',
+		'comment-form',
+		'gallery',
+	) );
 
 
 }
