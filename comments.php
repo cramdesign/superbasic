@@ -17,7 +17,7 @@ function superbasic_comment( $comment, $args, $depth ) {
 	?>
 	
 	<li id="comment-<?php comment_ID(); ?>" <?php comment_class(); ?>>
-		<p>Pingback: <?php comment_author_link(); ?> <?php edit_comment_link( __( '(Edit)', 'twentytwelve' ), '<span class="edit-link">', '</span>' ); ?></p>
+		<p>Pingback: <?php comment_author_link(); ?> <?php edit_comment_link( '(Edit)', '<span class="edit-link">', '</span>' ); ?></p>
 	<?php
 		break;
 			
@@ -28,7 +28,7 @@ function superbasic_comment( $comment, $args, $depth ) {
 	?>
 	
 	<li id="li-comment-<?php comment_ID(); ?>" <?php comment_class(); ?>>	
-		<article id="comment-<?php comment_ID(); ?>" class="comment row">
+		<article id="comment-<?php comment_ID(); ?>" class="comment row slat alt">
 		
 			<section class="comment-content comment primary">
 			
@@ -61,19 +61,19 @@ function superbasic_comment( $comment, $args, $depth ) {
 						esc_url( get_comment_link( $comment->comment_ID ) ),
 						get_comment_time( 'c' ),
 						/* translators: 1: date, 2: time */
-						sprintf( __( '%1$s at %2$s', 'twentytwelve' ), get_comment_date(), get_comment_time() ) );
+						sprintf( '%1$s at %2$s', get_comment_date(), get_comment_time() ) );
 						
 					?></p>
 
-					<p class="reply">
+					<?php edit_comment_link( 'Edit comment', '<p class="edit-link">', '</p>' ); ?>
+				
+					<p class="reply-link">
 						<?php comment_reply_link( array_merge( $args, array( 'reply_text' => 'Reply', 'after' => ' <span>&darr;</span>', 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
 					</p>
 					
-					<?php edit_comment_link( 'Edit', '<p class="edit-link">', '</p>' ); ?>
-				
 				</div><!-- meta -->
 			</header><!-- comment-author -->
-
+			
 		</article><!-- #comment-## -->
 	<?php
 		break;
@@ -97,12 +97,8 @@ if ( post_password_required() ) return;
 	<?php // You can start editing here -- including this comment! ?>
 
 	<?php if ( have_comments() ) : ?>
-		<h2 class="comments-title">
-			<?php
-				printf( _n( 'One comment on &ldquo;%2$s&rdquo;', '%1$s comments on &ldquo;%2$s&rdquo;', get_comments_number(), 'twentytwelve' ),
-					number_format_i18n( get_comments_number() ), '<span>' . get_the_title() . '</span>' );
-			?>
-		</h2>
+
+		<h2 class="comments-title"><?php comments_number('No Comments', 'One Comment', '% Comments' );?></h2>
 
 		<ol class="commentlist">
 			<?php wp_list_comments( array( 'callback' => 'superbasic_comment', 'style' => 'ol' ) ); ?>

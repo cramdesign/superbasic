@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 <div id="content">		
-<div class="row">
+<div class="row slat">
 
 	<div class="primary">
 		
@@ -24,7 +24,7 @@
 				
 				
 			<?php /* pages don't need meta data */
-				if ( !is_page() ) : ?>
+				if ( !is_page() and !is_attachment() ) : ?>
 				
 				<div class="meta">
 					<p class="time"><?php the_time( get_option('date_format') ); ?></p>
@@ -46,7 +46,7 @@
 		<?php /* end the Loop */ ?>
 		<?php endwhile; endif; ?>
 
-		<nav><?php posts_nav_link(); ?></nav>
+		<?php get_template_part( 'inc/pagination' ); ?>
 
 	</div><!-- primary -->
 	

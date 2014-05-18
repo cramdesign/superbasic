@@ -16,7 +16,6 @@
 	
 		<div id="masthead">
 			<h1 class="site-title"><a href="<?php echo home_url( "/" ); ?>"><?php bloginfo( "name" ); ?></a></h1>
-			<h2 class="site-description"><?php bloginfo( "description" ); ?></h2>
 		</div>
 			
 		<nav id="menu">

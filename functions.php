@@ -1,7 +1,14 @@
 <?php
 
 
+// Remove ugly inline css in gallery shortcode
 add_filter( 'use_default_gallery_style', '__return_false' );
+
+// sets max image width inserted into a post
+if ( ! isset( $content_width ) ) $content_width = 800;
+
+// add support for html5 markup where available
+add_theme_support( 'html5', array( 'gallery', 'comment-list', 'comment-form', 'search-form' ) );
 
 
 
@@ -16,7 +23,6 @@ register_sidebar(array(
 	'before_title'	=> '<h3 class="title">',
 	'after_title'	=> '</h3>'
 ));
-
 
 
 
@@ -37,7 +43,6 @@ if (!function_exists('theme_scripts')) : function theme_scripts() {
 
 } endif;
 add_action('wp_enqueue_scripts', 'theme_scripts', 5);
-
 
 
 
@@ -65,6 +70,7 @@ function custom_theme_features()  {
 
 }
 add_action( 'after_setup_theme', 'custom_theme_features' );
+
 
 
 

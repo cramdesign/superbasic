@@ -1,9 +1,9 @@
 body {
-	font-size: 16px;
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-	line-height: 1.625;
-	color: #777;
 	background: #fff;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 16px;
+	line-height: 1.75;
+	color: #777;
 	-webkit-font-smoothing: antialiased;
 	text-rendering: optimizeLegibility;
 }
@@ -16,6 +16,11 @@ img {
 h1, h2, h3, h4, h5, h6 {
 	margin-bottom: 1em;
 	font-weight: bold;
+	line-height: 1.1;
+}
+
+h1, h2 {
+	clear: both;
 }
 
 p {

@@ -51,6 +51,30 @@
 
 
 
+/* WP stuff 
+------------------------------------------ */
+
+.alignleft {
+	float: left;
+	margin-right: 1em;
+	margin-bottom: 1em;
+}
+
+.alignright {
+	float: right;
+	margin-left: 1em;
+	margin-bottom: 1em;
+}
+
+.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+
+
+
 /* Color boxes 
 ------------------------------------------ */
 
@@ -170,6 +194,7 @@ a {
 	padding: 4em 0;
 }
 
+/*
 @media (min-width: 500px) {
 	
 	.primary {
@@ -207,9 +232,61 @@ a {
 	}
 	
 }
+*/
+
+
+
+@media (min-width: 500px) {
+	
+	.slat > :first-child {
+		width: 60%;
+		float: left;
+		padding-right: 5em;
+	}
+	
+	.slat.alt > :first-child {
+		float: right;
+		padding-left: 5em;
+		padding-right: 0;
+	}
+	
+	.slat > :last-child {
+		overflow: hidden;
+		font-size: 90%;
+		opacity: 0.75;
+	}
+	
+}
+
+@media (min-width: 800px) {
+	
+	.slat > :first-child {
+		width: 73%;
+	}
+	
+}
+
+@media (max-width: 500px) {
+	
+	.slat > :last-child {
+		margin-top: 2em;
+	}
+	
+	#content .slat > :last-child {
+		border-top: 1px solid #ddd;
+		padding-top: 2em;
+	}
+	
+}
+
+
+
+
+.post .meta {
+	margin: 2em 0;
+}
 
 .post .meta p {
-	opacity: 0.60;
 	text-transform: uppercase;
 	font-size: 80%;
 	margin: 0;
@@ -224,14 +301,14 @@ a {
 	.post .meta p + p {
 		margin-left: 0.5em;
 		border-left: 1px solid #888;
-		padding-left: 0.5em;
+		padding-left: 0.75em;
 	}
 
 }
 
 #content .post + .post {
 	margin-top: 2em;
-	border-top: 1px solid #ddd;
+	border-top: 1em solid #ddd;
 	padding-top: 2em;
 }
 
@@ -281,6 +358,12 @@ a {
 	margin-right: -0.5em;
 }
 
+.gallery:after {
+	display: table;
+	content: "";
+	clear: both;
+}
+
 .gallery-item {
 	margin: 0;
 	float: left;
@@ -289,6 +372,7 @@ a {
 
 .gallery-item img {
 	width: 100%;
+	vertical-align: bottom;
 }
 
 .gallery-columns-1 .gallery-item {
@@ -319,6 +403,58 @@ a {
 .gallery-columns-9 .gallery-item {
     width: 11.1111%
 }
+
+.gallery-columns-2 .gallery-item:nth-child(2n+1),
+.gallery-columns-3 .gallery-item:nth-child(3n+1),
+.gallery-columns-4 .gallery-item:nth-child(4n+1),
+.gallery-columns-5 .gallery-item:nth-child(5n+1),
+.gallery-columns-6 .gallery-item:nth-child(6n+1),
+.gallery-columns-7 .gallery-item:nth-child(7n+1),
+.gallery-columns-8 .gallery-item:nth-child(8n+1),
+.gallery-columns-9 .gallery-item:nth-child(9n+1) {
+	clear: left;
+}
+
+/*--------------------------------------------------------------
+12.2 Galleries
+.gallery {
+	margin-bottom: 1.5em;
+}
+.gallery-item {
+	display: inline-block;
+	text-align: center;
+	vertical-align: top;
+	width: 100%;
+}
+.gallery-item img {
+	width: 100%;
+}
+.gallery-columns-2 .gallery-item {
+	max-width: 50%;
+}
+.gallery-columns-3 .gallery-item {
+	max-width: 33.33%;
+}
+.gallery-columns-4 .gallery-item {
+	max-width: 25%;
+}
+.gallery-columns-5 .gallery-item {
+	max-width: 20%;
+}
+.gallery-columns-6 .gallery-item {
+	max-width: 16.66%;
+}
+.gallery-columns-7 .gallery-item {
+	max-width: 14.28%;
+}
+.gallery-columns-8 .gallery-item {
+	max-width: 12.5%;
+}
+.gallery-columns-9 .gallery-item {
+	max-width: 11.11%;
+}
+.gallery-caption {}
+--------------------------------------------------------------*/
 
 
 
@@ -437,8 +573,8 @@ a {
 
 	#menu label {
 		display: block;
-		padding: 0.5em 0;
-		background-color: rgba(0,0,0,0.2);
+		padding: 0.75em 0;
+		/* background-color: rgba(0,0,0,0.2); */
 		text-align: center;
 		text-transform: uppercase;
 		font-weight: bold;
@@ -475,6 +611,40 @@ a {
 
 
 
+/* post navigation
+-------------------------------------------------------------- */
+.postnav {
+	margin-top: 4em;
+	font-size: 0.75em;
+	border-top: 1px solid #ddd;
+	padding: 2em 0;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	text-align: center;
+}
+
+.postnav .page-numbers {
+	padding: 0.5em 0.75em;
+	border: 1px solid #ddd;
+}
+
+.postnav .page-numbers + .page-numbers {
+	margin-left: 0.5em;
+}
+
+.postnav .current {
+	border: 1px solid #ccc;
+	background-color: #eee;
+}
+
+.postnav .prev, .postnav .next {
+	border: none;
+	padding: 0.5em 0;
+}
+
+
+
+
 /* Comments 
 ------------------------------------------ */
 
@@ -502,7 +672,7 @@ a {
 .children li section {
 }
 
-.comment article {
+.comment .row {
 	padding: 4em 0;
 }
 
@@ -527,6 +697,56 @@ a {
 .comment .vcard p {
 	margin: 0.5em 0;
 	line-height: 1;
+}
+
+#respond {
+	padding: 2em 0;
+}
+
+#respond label {
+	display: block;
+	text-transform: uppercase;
+	font-size: small;
+	font-weight: bold;
+}
+
+#reply-title small {
+	display: block;
+}
+
+#respond input:not([type="submit"]), #respond textarea {
+	width: 100%;
+}
+
+@media (min-width:500px) {
+	
+	#reply-title { 
+		width: 40%;
+		float: left;
+	}
+	
+	#commentform {
+		overflow: hidden;
+		padding-left: 5em;
+	}
+	
+}
+
+@media (min-width:800px) {
+	
+	#reply-title { 
+		width: 27%;
+	}
+	
+	.comment-form-author, .comment-form-email, .comment-form-url {
+		width: 32%;
+		float: left;
+	}
+	
+	.comment-form-email, .comment-form-url {
+		margin-left: 2%;
+	}
+	
 }
 
 

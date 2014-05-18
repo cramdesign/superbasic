@@ -2,7 +2,7 @@
 
 <footer id="footer">
 	<div class="row">	
-		<p>Powered by WordPress and imagination.</p>
+		<p class="site-description"><?php bloginfo( "description" ); ?></p>
 	</div>	
 </footer>
 	
