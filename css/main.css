@@ -14,15 +14,7 @@
 }
 ------------------------------------------ */
 
-:first-child {
-	margin-top: 0;
-}
-
-:last-child {
-	margin-bottom: 0;
-}
-
-/* universal reset: set everything to zero for consistency */
+/* universal box-sizing */
 *, *:before, *:after {
 	box-sizing: border-box;
 	-moz-box-sizing: border-box;
@@ -38,11 +30,12 @@
 	position: relative;
 }
 
+/* nested rows should fill container */
 .row .row {
 	width: auto;
 }
 
-/* contain and clear floated elements */
+/* contain and clear floated elements inside row elements */
 .row:before, .row:after, .clear:before, .clear:after {
 	display: table;
 	content: "";
