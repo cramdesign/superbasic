@@ -19,7 +19,7 @@ register_sidebar(array(
 	'id'			=> 'sidebar',
 	'description'	=> 'These are widgets for all sidebars.',
 	'before_widget'	=> '<div id="%1$s" class="widget %2$s">',
-	'after_widget'	=> '</div><!-- end widget -->',
+	'after_widget'	=> '</div><!-- widget -->',
 	'before_title'	=> '<h3 class="title">',
 	'after_title'	=> '</h3>'
 ));
